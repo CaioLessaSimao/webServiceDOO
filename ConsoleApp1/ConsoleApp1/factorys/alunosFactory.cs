@@ -1,9 +1,26 @@
-﻿namespace ConsoleApp1.factorys;
+﻿using System.Data;
 
-public class alunosFactory : IFactory<Aluno>
+namespace ConsoleApp1.factorys;
+
+public class alunosFactory
 {
-	public Aluno criar()
+	public static Aluno criar(dynamic data)
 	{
-	 return default;
+		Aluno aluno = new Aluno
+		{
+			nome = data.nome,
+			endereco = data.endereco,
+			disciplinas = new List<Disciplina>()
+		};
+
+		foreach (var disciplina in data.disciplinas)
+		{
+			aluno.disciplinas.Add(new Disciplina
+			{
+				nome = disciplina.nome,
+				nota = disciplina.nota
+			});
+		}
+		return aluno;
 	}
 }

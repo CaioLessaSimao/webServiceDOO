@@ -6,7 +6,7 @@ public class apiRequsition
 
     private apiRequsition(){}
 
-    private static HttpClient getInstance()
+    public static HttpClient getInstance()
     {
         if (instance == null)
         {

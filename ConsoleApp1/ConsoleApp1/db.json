@@ -1,32 +1,20 @@
 {
   "alunos": [
     {
-      "nome": "Maria Silva",
-      "endereco": "Rua das Flores, 123"
+      "nome": "João Silva",
+      "endereco": "Rua A, 123",
+      "disciplinas": [
+        { "nome": "Matemática", "nota": 8 },
+        { "nome": "História", "nota": 7 }
+      ]
     },
     {
-      "nome": "João Souza",
-      "endereco": "Avenida Central, 456"
-    }
-  ],
-  "professores": [
-    {
-      "nome": "Jorge",
-      "formacao": "Matematica"
-    },
-    {
-      "nome": "Luana",
-      "formacao": "Historia"
-    }
-  ],
-  "disciplinas": [
-    {
-      "nome": "Matemática",
-      "descricao": "Estudo de números e equações."
-    },
-    {
-      "nome": "História",
-      "descricao": "Estudo dos acontecimentos passados."
+      "nome": "Maria Oliveira",
+      "endereco": "Rua B, 456",
+      "disciplinas": [
+        { "nome": "Português", "nota": 9 },
+        { "nome": "Ciências", "nota": 8 }
+      ]
     }
   ]
 }

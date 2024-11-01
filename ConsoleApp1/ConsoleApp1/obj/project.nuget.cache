@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "y8qr/A8FY1w=",
+  "dgSpecHash": "2F2H8hMtKHw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\20222bsi0083\\Desktop\\webServiceDOO\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\RiderProjects\\webServiceDOO\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\20222bsi0083\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\Usuario\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

@@ -3,24 +3,38 @@ using Newtonsoft.Json;
 using System;
 using System.Data;
 using ConsoleApp1.factorys;
+using Newtonsoft.Json.Linq;
 
 namespace ConsoleApp1
 {
 	public class Program
 	{
-		static void Main(string[] args)
+		static async Task Main(string[] args)
 		{
+
+			HttpClient client = apiRequsition.getInstance();
 			
-			List<Turma> turmas = new List<Turma>();
-			
-			string arquivo = File.ReadAllText("db.json");
-			
-			DataSet dataSet = JsonConvert.DeserializeObject<DataSet>(arquivo);
-			
-			foreach (DataTable table in dataSet.Tables)
+			HttpResponseMessage response = await client.GetAsync("alunos");
+
+			if (response.IsSuccessStatusCode)
 			{
-				fabricaFactory fabrica = new fabricaFactory();
-				IFactory<T> = (IFactory<T>) fabrica.instanciar<T>();
+				List<Aluno> alunos = new List<Aluno>();
+			
+				var jsonString = await response.Content.ReadAsStringAsync();
+				JArray alunosJson = JArray.Parse(jsonString);
+				
+				foreach (var alunoJson in alunosJson)
+				{
+					alunos.Add(alunosFactory.criar(alunoJson));
+					
+				}
+				
+				IArquivoFactory arquivoFactory = new FabricaArquivoXml(); // Fábrica Abstrata para XML
+				ICriaArquivo criaArquivo = arquivoFactory.CriarArquivo();
+				
+				criaArquivo.SalvarTodosAlunos(alunos);
+				Console.WriteLine("Todos os alunos foram salvos em um único arquivo XML.");
+			
 			}
 		}
 	}
